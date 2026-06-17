@@ -1,0 +1,33 @@
+/* ===== RESET ET BASE ===== */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+color: #333333;
+background-color: #f8f8f8;
+}
+/* ===== NAVIGATION ===== */
+header {
+background-color: #1a1a2e;
+padding: 1rem 2rem;
+}
+nav a {
+color: white;
+text-decoration: none;
+margin-right: 1.5rem;
+font-weight: 500;
+transition: color 0.3s;
+}
+nav a:hover {
+color: #B88E23;
+}
+/* ===== CONTENU PRINCIPAL ===== */
+main {
+max-width: 1100px;
+margin: 2rem auto;
+padding: 0 1.5rem;
+}
