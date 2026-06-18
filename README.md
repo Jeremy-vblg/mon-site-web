@@ -1,2 +1,3 @@
-# mon-site-web
-Mon premier site web
+# Mon Site Web — Jérémy Vanbaelinghem
+Site web personnel déployé avec GitHub et Netlify.
+##
