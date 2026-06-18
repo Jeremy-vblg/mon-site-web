@@ -1,188 +1,92 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <!--
-    Déclaration de l'encodage.
-    UTF-8 permet d'afficher correctement les accents : é, è, à, ç...
-  -->
-  <meta charset="UTF-8">
+<!--
+  FORMULAIRE DE CONTACT NETLIFY
+
+  Ce formulaire est écrit directement dans contact.html.
+  Netlify va le détecter automatiquement lors du déploiement du site.
+
+  Important :
+  - name="contact" donne un nom au formulaire.
+  - method="POST" permet d'envoyer les données.
+  - data-netlify="true" indique à Netlify qu'il doit gérer ce formulaire.
+  - Le champ caché form-name confirme le nom du formulaire envoyé.
+-->
+<form name="contact" method="POST" data-netlify="true" class="contact-form">
 
   <!--
-    Cette ligne permet au site de s'adapter correctement aux écrans :
-    ordinateur, tablette, smartphone.
+    Champ caché obligatoire/recommandé pour Netlify.
+    Sa valeur doit être la même que le name du formulaire : contact.
   -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <input type="hidden" name="form-name" value="contact">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<header>
+<nav class="main-nav" aria-label="Navigation principale">
+  <a href="index.html" aria-current="page">Accueil</a>
+  <a href="about.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+  <h2>Envoyer un message</h2>
 
   <!--
-    Titre affiché dans l'onglet du navigateur.
+    Champ Nom.
+    Le label est lié au champ grâce à for="nom" et id="nom".
+    required signifie que le champ est obligatoire.
   -->
-  <title>Contact - EasyClic</title>
+  <label for="nom">Votre nom</label>
+  <input
+    type="text"
+    id="nom"
+    name="nom"
+    placeholder="Ex : Jean Dupont"
+    required
+  >
 
   <!--
-    Description utile pour les moteurs de recherche.
+    Champ Email.
+    type="email" permet au navigateur de vérifier que l'adresse ressemble à un email.
   -->
-  <meta name="description" content="Contactez EasyClic pour du dépannage informatique, de la formation numérique et de la réparation.">
+  <label for="email">Votre e-mail</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Ex : jean@email.fr"
+    required
+  >
 
   <!--
-    Lien vers ta feuille de style CSS.
-    Le fichier doit se trouver ici : assets/css/style.css
+    Champ Sujet.
+    Le select permet de guider la personne selon son besoin.
   -->
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-  <!--
-    HEADER = haut de page.
-    On y place généralement le logo, le nom du site et le menu.
-  -->
-  <header class="site-header">
-    <div class="container">
-
-      <!--
-        Logo / nom du site.
-        Pour l'instant, on met le nom en texte.
-        Plus tard, tu pourras remplacer par une image :
-        <img src="assets/img/logo.png" alt="Logo EasyClic">
-      -->
-      <a href="index.html" class="logo">EasyClic</a>
-
-      <!--
-        NAV = menu de navigation.
-        Chaque lien pointe vers une page du site.
-      -->
-      <nav class="main-nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="about.html">À propos</a>
-        <a href="contact.html" aria-current="page">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <label for="sujet">Sujet de votre demande</label>
+  <select id="sujet" name="sujet" required>
+    <option value="">Choisir un sujet</option>
+    <option value="depannage">Dépannage informatique</option>
+    <option value="formation">Formation numérique</option>
+    <option value="reparation">Réparation</option>
+    <option value="autre">Autre demande</option>
+  </select>
 
   <!--
-    MAIN = contenu principal de la page.
-    Il ne doit normalement y avoir qu'un seul <main> par page.
+    Champ Message.
+    textarea permet d'écrire un texte plus long.
   -->
-  <main>
-    <!--
-      Section d'introduction de la page contact.
-    -->
-    <section class="page-hero">
-      <div class="container">
-        <h1>Contact</h1>
-
-        <p>
-          Besoin d’aide pour un ordinateur, une tablette, un smartphone
-          ou un usage numérique du quotidien ? Contactez EasyClic pour
-          du dépannage, de la formation ou de la réparation.
-        </p>
-      </div>
-    </section>
-
-    <!--
-      Section contenant les informations de contact et le formulaire.
-    -->
-    <section class="contact-section">
-      <div class="container contact-grid">
-
-        <!--
-          Bloc d'informations pratiques.
-          Utile pour les visiteurs qui veulent te contacter directement.
-        -->
-        <article class="contact-info">
-          <h2>Informations pratiques</h2>
-
-          <p>
-            EasyClic accompagne les particuliers et débutants dans leurs
-            besoins numériques : prise en main, dépannage, réparation,
-            installation, conseils et formation.
-          </p>
-
-          <ul>
-            <li><strong>Zone :</strong> Le Havre et alentours</li>
-            <li><strong>Email :</strong> <a href="mailto:contact@easyclic.fr">contact@easyclic.fr</a></li>
-            <li><strong>Téléphone :</strong> <a href="tel:+33600000000">0632437631</a></li>
-          </ul>
-
-        </article>
-
-        <!--
-          Formulaire de contact.
-          La partie data-netlify="true" permet à Netlify de détecter le formulaire.
-          Si ton site n'est pas hébergé sur Netlify, il faudra une autre solution
-          pour recevoir les messages.
-        -->
-        <form name="contact" method="POST" data-netlify="true" class="contact-form">
-
-          <!--
-            Champ caché demandé par Netlify.
-            Il permet d'identifier le formulaire envoyé.
-          -->
-          <input type="hidden" name="form-name" value="contact">
-
-          <h2>Envoyer un message</h2>
-
-          <!--
-            Label = texte qui explique à quoi sert le champ.
-            L'attribut for doit correspondre à l'id du champ.
-          -->
-          <label for="name">Votre nom</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Ex : Jean Dupont"
-            required
-          >
-
-          <label for="email">Votre email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Ex : jean@email.fr"
-            required
-          >
-
-          <label for="subject">Sujet</label>
-          <select id="subject" name="subject" required>
-            <option value="">Choisir un sujet</option>
-            <option value="depannage">Dépannage informatique</option>
-            <option value="formation">Formation numérique</option>
-            <option value="reparation">Réparation</option>
-            <option value="autre">Autre demande</option>
-          </select>
-
-          <label for="message">Votre message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="6"
-            placeholder="Décrivez votre besoin le plus simplement possible..."
-            required
-          ></textarea>
-
-          <!--
-            Bouton d'envoi du formulaire.
-          -->
-          <button type="submit">Envoyer le message</button>
-        </form>
-      </div>
-    </section>
-  </main>
+  <label for="message">Votre message</label>
+  <textarea
+    id="message"
+    name="message"
+    rows="6"
+    placeholder="Décrivez votre besoin le plus simplement possible..."
+    required
+  ></textarea>
 
   <!--
-    FOOTER = bas de page.
+    Bouton d'envoi.
+    Quand la personne clique ici, les données sont envoyées à Netlify.
   -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 EasyClic - Dépannage, formation et réparation informatique.</p>
-    </div>
-  </footer>
+  <button type="submit">Envoyer</button>
 
-  <!--
-    Lien vers ton fichier JavaScript.
-    Il est placé en bas pour que la page HTML se charge d'abord.
-  -->
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+</form>
