@@ -1,0 +1,16 @@
+# Dépendances Node.js
+node_modules/
+# Fichiers de configuration locale VS Code
+.vscode/
+# Fichiers système Windows
+Thumbs.db
+Desktop.ini
+*.lnk
+# Fichiers de cache macOS (si collaboration)
+.DS_Store
+# Variables d'environnement (SECRETS !)
+.env
+.env.local
+# Fichiers de build
+dist/
+build/
