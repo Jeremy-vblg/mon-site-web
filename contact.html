@@ -1,92 +1,103 @@
-<!--
-  FORMULAIRE DE CONTACT NETLIFY
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Jérémy pour une demande de dépannage, formation ou réparation informatique.">
+  <title>Contact — Jérémy</title>
 
-  Ce formulaire est écrit directement dans contact.html.
-  Netlify va le détecter automatiquement lors du déploiement du site.
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-  Important :
-  - name="contact" donne un nom au formulaire.
-  - method="POST" permet d'envoyer les données.
-  - data-netlify="true" indique à Netlify qu'il doit gérer ce formulaire.
-  - Le champ caché form-name confirme le nom du formulaire envoyé.
--->
-<form name="contact" method="POST" data-netlify="true" class="contact-form">
+<body>
+  <header>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <!-- Bouton du menu mobile. Ton JavaScript cherche la classe .burger -->
+      <button class="burger" aria-label="Ouvrir le menu">
+        ☰
+      </button>
 
-  <!--
-    Champ caché obligatoire/recommandé pour Netlify.
-    Sa valeur doit être la même que le name du formulaire : contact.
-  -->
-  <input type="hidden" name="form-name" value="contact">
+      <!-- Ton JavaScript cherche précisément nav ul -->
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<link rel="stylesheet" href="assets/css/style.css">
+  <main>
+    <section class="animate-on-scroll">
+      <h1>Contact</h1>
+      <p>
+        Utilisez ce formulaire pour me contacter au sujet d’un dépannage,
+        d’une formation ou d’une réparation informatique.
+      </p>
+    </section>
 
-<header>
-<nav class="main-nav" aria-label="Navigation principale">
-  <a href="index.html" aria-current="page">Accueil</a>
-  <a href="about.html">À propos</a>
-  <a href="contact.html">Contact</a>
-</nav>
-</header>
+    <section class="animate-on-scroll">
+      <!--
+        FORMULAIRE DE CONTACT NETLIFY
 
-  <h2>Envoyer un message</h2>
+        Ce formulaire est écrit directement dans contact.html.
+        Netlify va le détecter automatiquement lors du déploiement du site.
 
-  <!--
-    Champ Nom.
-    Le label est lié au champ grâce à for="nom" et id="nom".
-    required signifie que le champ est obligatoire.
-  -->
-  <label for="nom">Votre nom</label>
-  <input
-    type="text"
-    id="nom"
-    name="nom"
-    placeholder="Ex : Jean Dupont"
-    required
-  >
+        Important :
+        - name="contact" donne un nom au formulaire.
+        - method="POST" permet d'envoyer les données.
+        - data-netlify="true" indique à Netlify qu'il doit gérer ce formulaire.
+        - Le champ caché form-name confirme le nom du formulaire envoyé.
+      -->
+      <form name="contact" method="POST" data-netlify="true" class="contact-form">
+        <input type="hidden" name="form-name" value="contact">
 
-  <!--
-    Champ Email.
-    type="email" permet au navigateur de vérifier que l'adresse ressemble à un email.
-  -->
-  <label for="email">Votre e-mail</label>
-  <input
-    type="email"
-    id="email"
-    name="email"
-    placeholder="Ex : jean@email.fr"
-    required
-  >
+        <h2>Envoyer un message</h2>
 
-  <!--
-    Champ Sujet.
-    Le select permet de guider la personne selon son besoin.
-  -->
-  <label for="sujet">Sujet de votre demande</label>
-  <select id="sujet" name="sujet" required>
-    <option value="">Choisir un sujet</option>
-    <option value="depannage">Dépannage informatique</option>
-    <option value="formation">Formation numérique</option>
-    <option value="reparation">Réparation</option>
-    <option value="autre">Autre demande</option>
-  </select>
+        <label for="nom">Votre nom</label>
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          placeholder="Ex : Jean Dupont"
+          required
+        >
 
-  <!--
-    Champ Message.
-    textarea permet d'écrire un texte plus long.
-  -->
-  <label for="message">Votre message</label>
-  <textarea
-    id="message"
-    name="message"
-    rows="6"
-    placeholder="Décrivez votre besoin le plus simplement possible..."
-    required
-  ></textarea>
+        <label for="email">Votre e-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ex : jean@email.fr"
+          required
+        >
 
-  <!--
-    Bouton d'envoi.
-    Quand la personne clique ici, les données sont envoyées à Netlify.
-  -->
-  <button type="submit">Envoyer</button>
+        <label for="sujet">Sujet de votre demande</label>
+        <select id="sujet" name="sujet" required>
+          <option value="">Choisir un sujet</option>
+          <option value="depannage">Dépannage informatique</option>
+          <option value="formation">Formation numérique</option>
+          <option value="reparation">Réparation</option>
+          <option value="autre">Autre demande</option>
+        </select>
 
-</form>
+        <label for="message">Votre message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          placeholder="Décrivez votre besoin le plus simplement possible..."
+          required
+        ></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jérémy Vanbaelinghem</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

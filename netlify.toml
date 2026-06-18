@@ -1,24 +1,13 @@
+# Configuration Netlify pour un site statique simple
+
 [build]
-publish = "." # Dossier à déployer
-command = "" # Commande de build (vide pour site statique)
-[build.environment]
-NODE_VERSION = "22" # Version de Node.js si nécessaire
-# Redirections personnalisées
-[[redirects]]
-from = "/ancien-chemin"
-to = "/nouveau-chemin"
-status = 301
+  publish = "."
+
 # En-têtes HTTP de sécurité
 [[headers]]
-for = "/*"
-[headers.values]
-X-Frame-Options = "DENY"
-X-Content-Type-Options = "nosniff"
-Content-Security-Policy = "default-src 'self'
-Referrer-Policy = "no-referrer"
-Permissions-Policy = "camera=(), microphone=()"
-# Page 404 personnalisée
-[[redirects]]
-from = "/*"
-to = "/404.html"
-status = 40
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
